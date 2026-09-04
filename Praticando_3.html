@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 3 - Seções, Containers e Bordas com CSS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #111;
+        }
+
+        .azul { color: blue; }
+        .verde { color: green; }
+        .vermelho { color: red; }
+
+        header {
+            background-color: lightblue;
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0 0 6px 0;
+            font-size: 1.6em;
+        }
+        header p {
+            margin: 0;
+        }
+
+        section.bloco {
+            background-color: honeydew;
+            padding: 15px 20px;
+        }
+        section.bloco h3 {
+            margin-top: 0;
+        }
+
+        .caixa-amarela {
+            background-color: yellow;
+            border: 2px solid red;
+            
+        }
+
+        .caixa-azul {
+            background-color: lightblue;
+            border: 2px solid red;
+            padding: 8px 12px;
+            margin: 10px 0;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 1px 4px;
+        }
+
+        .container-inline {
+            background-color: aliceblue;
+            border: 2px solid blue;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .container-inline h4 {
+            margin-top: 0;
+        }
+        .inline-item {
+            display: inline-block;
+            border: 1px solid blue;
+            padding: 2px 8px;
+            margin: 0 5px 5px 0;
+        }
+        .nota {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .container-block {
+            background-color: seashell;
+            border: 2px solid darkorange;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .container-block h4 {
+            margin-top: 0;
+        }
+        .block-item {
+            display: block;
+            border: 1px solid darkorange;
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            background-color: white;
+        }
+        blockquote.block-item {
+            margin-left: 30px;
+        }
+
+        footer {
+            background-color: #d3d3d3;
+            padding: 10px 20px;
+        }
+        footer p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Praticando 3 - Seções, Containers e Bordas com CSS</h1>
+        <p>Este é um exemplo de cabeçalho feito com &lt;header&gt;.</p>
+    </header>
+
+    <main>
+        <section class="bloco">
+            <h3>Seção 1</h3>
+            <p>
+                Este é um exemplo de texto com uma palavra <span class="azul">azul</span>, uma palavra <span class="verde">verde</span> e uma palavra <span class="vermelho">vermelha</span>.
+            </p>
+            <div class="caixa-amarela">
+                <p>Caixa feita com DIV dentro da seção.</p>
+            </div>
+            <div class="caixa-azul">
+                <p>
+                    Segundo a "História da Web", a primeira página HTML foi publicada em 1991 — mais de 30 anos atrás. Hoje, a linguagem é usada em <strong>bilhões</strong> de páginas ao redor do mundo.
+                </p>
+                <p>
+                    Curiosidade: o símbolo de grau (&deg;) e o de multiplicação (&times;) também são entidades, como em <strong>25&deg;C</strong> ou <strong>3 &times; 4</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="bloco">
+            <h3>Seção 2</h3>
+            <p>
+                Este é outro exemplo de texto, agora há mais palavras em <span class="verde">verde</span>, algumas em <span class="azul">azul</span> e só uma em <span class="vermelho">vermelho</span>.
+            </p>
+            <div class="caixa-azul">
+                <p>
+                    Todo rodapé de site sério tem um símbolo de copyright (&copy;) e, às vezes, até de marca registrada (&reg;) ou marca comercial (&trade;). Setas também são comuns em menus: &larr; voltar &rarr; avançar.
+                </p>
+                <p>
+                    E frações? &frac12; xícara de açúcar, &frac14; de hora — tudo isso são entidades HTML!
+                </p>
+            </div>
+        </section>
+
+        <section class="bloco">
+            <h3>Seção 3 &mdash; Por que entidades existem de verdade</h3>
+            <p>
+                Além dos símbolos "bonitinhos", entidades resolvem um problema real: como mostrar um sinal de menor (<code>&amp;lt;</code>) ou maior (<code>&amp;gt;</code>) na tela sem o navegador achar que é o início de uma tag?
+            </p>
+            <div class="caixa-amarela">
+                <p>
+                    Se eu quiser que a tag <code>&lt;p&gt;</code> apareça como texto normal (sem virar um parágrafo de verdade), preciso escrever <code>&amp;lt;p&amp;gt;</code> no código-fonte.
+                </p>
+                <p>
+                    O mesmo vale para o "E comercial" (&amp;): quando eu quero mostrá-lo literalmente, preciso escrever <code>&amp;amp;</code>.
+                </p>
+                <p>
+                    (Nota: repare que a tag <code>&lt;code&gt;</code> foi usada aqui porque ela indica que aquele trecho é código — e o navegador já mostra esse texto com uma fonte diferente por padrão, sem eu precisar definir nada com CSS.)
+                </p>
+            </div>
+        </section>
+
+        <section class="bloco">
+            <h3>Elementos Inline vs. Block</h3>
+            <p>
+                Alguns elementos HTML ficam <strong>na mesma linha</strong> que o conteúdo ao redor (inline); outros sempre <strong>começam em uma linha nova</strong> (block). Compare:
+            </p>
+
+            <div class="container-inline">
+                <h4>Inline</h4>
+                <span class="inline-item"><a href="#">&lt;a&gt;</a></span>
+                <span class="inline-item"><strong>&lt;strong&gt;</strong></span>
+                <span class="inline-item"><em>&lt;em&gt;</em></span>
+                <span class="inline-item"><mark>&lt;mark&gt;</mark></span>
+                <span class="inline-item"><code>&lt;code&gt;</code></span>
+                <span class="inline-item">H<sub>2</sub>O (&lt;sub&gt;)</span>
+                <span class="inline-item">m<sup>2</sup> (&lt;sup&gt;)</span>
+                <p class="nota">Repare: todos os exemplos acima ficam lado a lado, na mesma linha.</p>
+            </div>
+
+            <div class="container-block">
+                <h4>Block</h4>
+                <div class="block-item">&lt;div&gt; — um container genérico.</div>
+                <div class="block-item">&lt;p&gt; — um parágrafo.</div>
+                <div class="block-item"><strong>&lt;h1&gt; a &lt;h6&gt; — títulos.</strong></div>
+                <blockquote class="block-item">&lt;blockquote&gt; — uma citação.</blockquote>
+                <div class="block-item">&lt;section&gt; — uma seção (como esta própria página usa!)</div>
+                <p class="nota">Repare: cada exemplo acima começa em uma linha própria, mesmo sendo um texto curto.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Este é um exemplo de rodapé feito com &lt;footer&gt;.</p>
+        <p>&copy; 2026 Adriel Vaz &mdash; Desenvolvimento Web 1</p>
+    </footer>
+
+</body>
+</html>

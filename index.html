@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu de Exercícios CSS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .navbar {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 550px;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    .menu-title {
+      color: #1a1a1a;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f2f5;
+    }
+    .menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column; 
+      gap: 12px;
+    }
+    .menu a {
+      display: flex;
+      align-items: center;
+      padding: 14px 18px;
+      background-color: #f8f9fa;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      transition: all 0.25s ease-in-out;
+    }
+    .menu a::before {
+      content: "➔";
+      margin-right: 12px;
+      color: #4f46e5;
+      font-size: 0.85rem;
+      transition: transform 0.25s ease;
+    }
+    .menu a:hover {
+      background-color: #4f46e5;
+      color: #ffffff;
+      border-color: #4f46e5;
+      transform: translateX(6px); 
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    }
+    .menu a:hover::before {
+      color: #ffffff;
+      transform: translateX(3px);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2 class="menu-title">Exercícios Práticos</h2>
+    <ul class="menu">
+      <li><a href="Praticando_1.html">Praticando 1 - Primeiros passos com CSS</a></li>
+      <li><a href="Praticando_2.html">Praticando 2 - Tabela grande com colspan e rowspan colorida com CSS</a></li>
+      <li><a href="Praticando_3.html">Praticando 3 - Seções, Containers e Bordas com CSS</a></li>
+      <li><a href="Praticando_4.html">Praticando 4 - Bordas, Outline e :hover</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
